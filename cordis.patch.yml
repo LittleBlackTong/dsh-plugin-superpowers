@@ -1,0 +1,8 @@
+# dsh-plugin-superpowers bundle layer.
+#
+# Declared via the `dsh.bundle.patch` manifest in package.json, so
+# `dsh plugin add dsh-plugin-superpowers` (and the dsh-market install flow)
+# mounts this insert automatically.
+- insert:
+    - id: dsh-superpowers
+      name: dsh-plugin-superpowers
