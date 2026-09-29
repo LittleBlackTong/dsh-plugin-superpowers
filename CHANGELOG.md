@@ -4,6 +4,15 @@
 
 > 本文件自 0.1.1 起记录（0.1.0 为初始技能移植版本，无历史条目）。
 
+## [0.1.2] - 2026-09-29
+
+### Fixed（DSH 0.2.0 兼容）
+
+- **声明支持 DSH 0.2.x 运行时**：`peerDependencies` 中 `@deepseek-ai/dsh-skill` 的范围由 `^0.1.0-rc.6` 扩为 **`^0.1.0-rc.6 || ^0.2.0-rc.1`**。
+  - **症状**：DSH 运行时升级到 `0.2.0-rc.1` 后，插件被兼容性闸门判定为 incompatible，启动时**整个 bundle 被静默跳过**，14 个方法论技能与 `/superpowers` 命令全部不可用。
+  - **原因**：DSH 的 `evaluatePluginCompatibility` **只按 `peerDependencies` 里的 `@deepseek-ai/dsh-*` 范围**与运行版本做 semver 匹配（`includePrerelease`），旧范围不含 `0.2.x`，于是被拒。
+  - **说明**：本插件实际使用的 `ctx.skills.register()` 与 `ctx.commands.register()` 在 0.2.0 中**签名未变**，属声明过时而非接口破裂；沿用旧范围可继续兼容 `0.1.x` 运行时。
+
 ## [0.1.1] - 2026-09-28
 
 ### Fixed（DSH session format v4 兼容）

@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-superpowers",
   "description": "obra/superpowers skills for DeepSeek Harness: 14 development-methodology skills (brainstorming, writing/executing plans, subagent-driven development, TDD, systematic debugging, code review, verification and more) registered into the DSH skill registry, loadable via the skill tool.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "type": "module",
   "main": "lib/index.js",
@@ -42,7 +42,7 @@
   ],
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.1",
-    "@deepseek-ai/dsh-skill": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-skill": "^0.1.0-rc.6 || ^0.2.0-rc.1",
     "@deepseek-ai/schemastery": "^3.18.1"
   },
   "repository": {
